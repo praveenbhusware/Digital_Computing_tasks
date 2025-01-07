@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 2rem;
+            overflow-x: hidden;
+        }
+
+        .main-div {
+            max-width: 1450px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .main-div::before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #f11607 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+            filter: blur(50px);
+            z-index: -1;
+        }
+
+        
+        
+        .main-div {
+            flex: 1;
+            position: relative;
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: transform 0.5s ease;
+            height: 100px;
+            width: 100%;
+        }
+        .main-div:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .main-div::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            border: 3px solid #f11607;
+            border-radius: 20px;
+            z-index: -1;
+            animation: borderPulse 2s infinite;
+        }
+
+        @keyframes borderPulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .main-div img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(241, 22, 7, 0.3);
+            transition: all 0.3s ease;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main-div">
+        <div class="img">
+            <img src="img.png" alt="PRAVEEN THAKUR">
+        </div>
+        <div class="about-section">
+            <h1>Technical Expertise</h1>
+            <div class="skill-list">
+                <div class="skill-item">html</div>
+                <div class="skill-item">CSS</div>
+                <div class="skill-item">js</div>
+                <div class="skill-item">Tailwind</div>
+                <div class="skill-item">GitHub</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
